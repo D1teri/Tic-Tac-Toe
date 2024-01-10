@@ -1,4 +1,6 @@
- /**
+package tictactoe;
+
+/**
  * Tic-Tac-Toe game constants
  */
 
@@ -40,4 +42,3 @@ public class Constants
     public static final String TIE_GAME = "It's a tie game!";
     public static final String START_NEW_GAME = "Start a new game (Y or N)?";
 }
-

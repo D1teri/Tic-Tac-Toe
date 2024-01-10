@@ -1,5 +1,7 @@
-  
- /**
+ 
+
+
+/**
  * Tic-Tac-Toe state variables.
  */
 public class State
@@ -9,7 +11,7 @@ public class State
     private String xName = "";
     private String oName = "";
     private int[][] board = new int[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
-    
+
     public boolean isWinner() {
         int total;
         for (int row=0; row<Constants.BOARD_SIZE; row++) {
@@ -37,15 +39,15 @@ public class State
         }
         return true;
     }
-    
+
     public int getGameState() {
-        return this.gameState;
+        return gameState;
     }
 
     public void setGameState(int gameState) {
         this.gameState = gameState;
-    }  
-    
+    }
+
     public int getWhoseMove() {
         return whoseMove;
     }
@@ -77,6 +79,5 @@ public class State
     public void setBoardCell(int row, int col, int value) {
         this.board[row][col] = value;
     }
-
 
 }
