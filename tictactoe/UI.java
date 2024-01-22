@@ -1,3 +1,6 @@
+
+package tictactoe;
+
 import java.util.Scanner;
 
 /**
@@ -14,21 +17,27 @@ public class UI
 
 // Utility methods
 public String getXOrO(int whoseMove) {
-  return (whoseMove == -1) ? "X" : "O";
+    if (whoseMove == -1) {
+        return "X";
+    } else if (whoseMove == 1) {
+        return "O";
+    } else {
+        return " "; 
+    }
 }
 
 public String getPlayerName(int whoseMove, String xName, String yName) {
-  return (whoseMove == -1) ? xName : yName;
+    return (whoseMove == -1) ? xName : yName;
 }
 
 public boolean isLegalMove(State state, int row, int col) {
-  return 1 <= row && row <= Constants.BOARD_SIZE &&
+    return 1 <= row && row <= Constants.BOARD_SIZE &&
     1 <= col && col <= Constants.BOARD_SIZE &&
     state.getBoardCell(row, col) == Constants.BLANK;
 }
 
 // Prompt for input methods
-public String promptForName(int player) {
+public String promptForName(String player) {
     System.out.printf(Constants.GET_PLAYER_NAME, player);
     return scanner.next();
 }
@@ -74,6 +83,7 @@ public void printBoard(State state) {
     System.out.println(Constants.DIVIDER_STRING);
     for (int row = 0; row < Constants.BOARD_SIZE; row++) {
         System.out.printf(Constants.BOARD_STRING, getXOrO(state.getBoardCell(row, 0)), getXOrO(state.getBoardCell(row, 1)), getXOrO(state.getBoardCell(row, 2)));
+        System.out.println();
         System.out.println(Constants.DIVIDER_STRING);
     }
 }

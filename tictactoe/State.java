@@ -1,5 +1,5 @@
- 
 
+package tictactoe;
 
 /**
  * Tic-Tac-Toe state variables.
@@ -28,7 +28,7 @@ public class State
         if (total == -3 || total == 3) return true;
         return false;
     }
-
+    
     public boolean isTie() {
         for (int row=0; row<Constants.BOARD_SIZE; row++) {
             for (int col=0; col<Constants.BOARD_SIZE; col++) {
@@ -52,7 +52,7 @@ public class State
         return whoseMove;
     }
 
-    public void setWhoseMore(int whoseMove) {
+    public void setWhoseMove(int whoseMove) {
         this.whoseMove = whoseMove;
     }
 
