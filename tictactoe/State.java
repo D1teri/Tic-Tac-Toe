@@ -79,5 +79,12 @@ public class State
     public void setBoardCell(int row, int col, int value) {
         this.board[row][col] = value;
     }
-
+    
+    public void resetBoard(){
+        for (int row = 0; row<Constants.BOARD_SIZE; row++) {
+            for (int col=0; col<Constants.BOARD_SIZE; col++) {
+                setBoardCell(row,col,Constants.BLANK);
+            }
+        }
+    }
 }
